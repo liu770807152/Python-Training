@@ -6,7 +6,7 @@
 a = 10
 print("hello world")
 
-def func():
+def func(a, b, c):
     a = 20
     print(a)
 
@@ -31,7 +31,7 @@ def func():
 func()
 
 # print = 18
-# print(print)
+# print(print) # 18()
 
 
 def func():
@@ -39,6 +39,7 @@ def func():
     def hehe():
         pass
     print(locals())  # 查看当前作用域中的内容
+func()
 
 # 全局作用域内容: 全局名称空间+内置名称空间
 print(globals())  # globals可以查看全局作用域中的内容

@@ -15,7 +15,7 @@ name = "Sylar"
 addr = "Dota"
 hobby = "选水人"
 
-# 老的格式化方案
+# 老的格式化方案 %d %f
 print("我叫%s, 我喜欢在%s%s" % (name, addr, hobby))
 
 # 后来的改进方法
