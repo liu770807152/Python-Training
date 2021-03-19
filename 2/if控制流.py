@@ -1,26 +1,29 @@
-'''交换变量
-如下的小技巧很巧妙，可以为你节省多行代码：
-'''
-a = 1
-b = 2
-a, b = b, a
-print(a, b) # 2 1
+def printGrade(mark):
+    if mark > 0 and mark < 50:
+        return 'Fail'
+    elif mark >= 50 and mark < 60:
+        return 'Pass'
+    elif mark >= 60 and mark < 70:
+        return 'Credit'
+    elif mark >= 70 and mark < 80:
+        return 'Distinction'
+    elif mark > 80 and mark <= 100:
+        return 'High Distinction'
+    else:
+        return 'Invalid mark!'
 
 '''
 比较运算符的链接
 你可以在 Python 中将多个比较运算符链接到一起，如此就可以创建更易读、更简洁的代码：
 '''
 x = 10
-
 # Instead of:
 if x > 5 and x < 15:
     print("Yes")
-# yes
-
 # You can also write:
 if 5 < x < 15:
     print("Yes")
-# Yes
+
 
 '''
 条件赋值中的三元运算符

@@ -1,12 +1,56 @@
 '''
-else中的代码只有当for循环不被break中断才执行
+while循环语法
 '''
-a = [1, 2, 3, 4, 5]
+i = 0
+while i < 10:
+    print(i)
+    i += 1
+else:  # else中的代码只有当循环不被break中断才执行
+    print("OK!")
+
+'''
+for循环语法
+'''
+for i in range(10):
+    print(i)
+    i += 1
+else:  # else中的代码只有当循环不被break中断才执行
+    print("OK!")
+
+print('=============================================================================================')
+
+'''
+例题: 检查一个list里是否有0。如果有，打印它的下标; 如果没有，则打印"No zero inside the list!"。
+'''
+a = [1, 2, 0, 4, 5]
+# while循环
+index = 0
+while index < 5:
+    if a[index] == 0:
+        print(index)
+        break
+    index += 1
+else:
+    print('No zero inside the list!')
+
+# for循环
 for cur in a:
     if cur == 0:
+        # 找不到index下标，怎么办?
         break
 else:
-    print('Did not break out of the loop')
+    print('No zero inside the list!')
+
+# for循环 + enumerate
+# 切记: index下标在前，元素在后！
+for index, cur in enumerate(a):
+    if cur == 0:
+        print(index)
+        break
+else:
+    print('No zero inside the list!')
+
+print('=============================================================================================')
 
 '''
 我们经常会如下这种嵌套的 for 循环代码
