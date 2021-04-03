@@ -18,6 +18,7 @@ def findSquaredRoot(num, guess):
         return math.nan
     quotient = num / guess
     avg = (quotient + guess) / 2
+    # avg ** 2 - num == 0
     if math.fabs(avg ** 2 - num < 1e-15):
         return avg
     else:
