@@ -1,14 +1,14 @@
 import math
 
-def solveTheEquation():
+def solve_the_equation():
     '''
     This function solves the problem of following equation: r^2π = 1.
     Returns the value of r.
     '''
     rhs = 1 / math.pi
-    return findSquaredRoot(rhs, rhs / 2)
+    return find_squared_root(rhs, rhs / 2)
 
-def findSquaredRoot(num, guess):
+def find_squared_root(num, guess):
     '''
     The function uses 牛顿迭代法 to find the squared root of the given number.
     Returns the squared root.
@@ -22,6 +22,6 @@ def findSquaredRoot(num, guess):
     if math.fabs(avg ** 2 - num < 1e-15):
         return avg
     else:
-        return findSquaredRoot(num, avg)
+        return find_squared_root(num, avg)
 
-print(solveTheEquation())
+print(solve_the_equation())
