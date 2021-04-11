@@ -1,4 +1,4 @@
-def printGrade(mark):
+def print_grade(mark):
     if mark > 0 and mark < 50:
         return 'Fail'
     elif mark >= 50 and mark < 60:
