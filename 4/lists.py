@@ -48,3 +48,34 @@ print(list(set().union(a, b, c))) # [1, 2, 3, 4, 5, 6, 7, 8, 9]
 from collections import Counter
 c = Counter('hello world')
 print(c.most_common(2)) #[('l', 3), ('o', 2)]
+
+'''
+难点的代码
+'''
+# 1
+a_list = [1, 2, 3]
+b_list = a_list
+a_list.append(4)
+print(b_list)
+
+# 2
+a_list = [[1, 2], [3, 4]]
+b_list = a_list[:]
+a_list[0].reverse()
+b_list.reverse()
+print(b_list)
+
+# 3
+a_list = [[1, 2], [3, 4]]
+b_list = a_list[:]
+a_list[0] = a_list[0][::-1]
+b_list.reverse()
+print(b_list)
+
+# 4
+a_list = [1, 2, 3]
+b_list = [4, 5, 6]
+a_list.append(b_list)
+c_list = a_list[:]
+b_list[0] = 'A'
+print(b_list)

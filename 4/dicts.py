@@ -1,4 +1,5 @@
-# key可以是任何object，但是要保证不一样
+# key可以是任何object，但是要保证不一样！！！！
+# Keys must be immutable
 d = {123: "呵呵", True: "哈哈", "name": "me", (1,2,3): 123}
 print(d)
 print('====================================')
@@ -105,3 +106,13 @@ print(wang)
 
 # 3
 print('武术' in wang['wife']['hobby'])
+
+'''
+难点的代码
+'''
+a_dict = {1: [0], 2: [1]}
+b_dict = a_dict
+c_dict = a_dict.copy()
+b_dict[1] = [2]
+c_dict[1] = [0, 0]
+a_dict[2].append(1)
