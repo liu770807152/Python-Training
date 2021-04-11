@@ -58,7 +58,8 @@ try:
     f = open("a.txt", mode="r", encoding='utf-8')
     print(f.readline())
     print(f.readline())
-except IOError as e:
+# 一个except子句可以同时处理多个异常，这些异常将被放在一个括号里成为一个元组
+except (IOError, NameError) as e:
     print(e)
 else:
     f.close()
