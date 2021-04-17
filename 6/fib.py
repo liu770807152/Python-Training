@@ -23,19 +23,7 @@ def printAllSequence(n):
 print(printAllSequence(30), end='\n\n')
 
 '''
-带缓存，但是没改进算法
-'''
-from functools import cache, lru_cache
-# @cache
-@lru_cache(maxsize=5)
-def fib(n: int):
-    if n <= 1:
-        return n
-    return fib(n - 1) + fib(n - 2)
-print(printAllSequence(200), end='\n\n')
-
-'''
-改进算法，加入缓存
+改进算法，加入备忘
 '''
 def fib(n: int, mem: dict):
     if n <= 1:
