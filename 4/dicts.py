@@ -4,7 +4,7 @@ d = {123: "呵呵", True: "哈哈", "name": "me", (1,2,3): 123}
 print(d)
 print('====================================')
 
-'''check'''
+'''search'''
 print(d[(1,2,3)])  # 通过key找value
 # setdefault在执行完新增流程之后. 会根据key查询value
 print(d.setdefault(123))
@@ -60,15 +60,16 @@ newMap = {v: k for k, v in m.items()} # {1: 'a', 2: 'b', 3: 'c', 4: 'd'}
 print(newMap)
 print('====================================')
 
-''' 练习: [11,22,33,44,55,66,77,88,99]
-    分类, 把大于50的放一起, 把小于50的放一起
+''' 
+    练习: [11,22,33,44,55,66,77,88,99]
+    分类, 把大于55的放一起, 把小于55的放一起
     结果: {"bigger":[66,77,88,99], "smaller":[11,22,33,44,55]}
 '''
 
 # l = [11, 22, 33, 44, 55, 66, 77, 88, 99]
 # result = {}
 # for item in l:
-#     if item > 50:
+#     if item > 55:
         # setdefault在执行完新增流程之后. 会根据key查询value
 #         result.setdefault("bigger", []).append(item)
 #     else:
@@ -93,19 +94,13 @@ wang = {
 
 # 练习：
 # 1. 给汪峰的二儿子加一岁
-# 2. 给汪峰添加一个爱好: 卡拉ok
-# 3. 检查汪峰老婆有没有“武术”的爱好
-
-# 1
 wang['children'][1]['age'] += 1
 print(wang)
-
-# 2
-wang['hobby'].append("卡拉ok")
+# 2. 给汪峰添加一个爱好: 卡拉ok
+wang['hobby'].append('卡拉ok')
 print(wang)
-
-# 3
-print('武术' in wang['wife']['hobby'])
+# 3. 检查汪峰老婆有没有“武术”的爱好
+print('有' if '武术' in wang['wife']['hobby'] else '没有')
 
 '''
 难点的代码
