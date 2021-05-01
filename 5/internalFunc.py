@@ -1,5 +1,5 @@
 '''
-Comparable对象的迭代器iterator
+Iterable对象的迭代器iterator
 '''
 l = [11, 22, 33]
 # 1. 通过iter函数获取迭代器，并用next()进行迭代
@@ -14,31 +14,6 @@ print(it.__next__())
 print(it.__next__())
 print(it.__next__())
 
-print('=============================================')
-
-'''
-zip()与dir()
-
-The dir() function returns all properties and methods of the specified object, without the values.
-This function will return all the properties and methods, even built-in properties which are default for all object.
-
-The zip() function returns a zip object, which is an iterator of tuples where the first item in each passed iterator is paired together, 
-and then the second item in each passed iterator are paired together etc.
-'''
-lst1 = ["赵本山", "苏有朋"]
-lst2 = ["马大帅", "情深深雨蒙蒙", "情深深雨蒙蒙"]
-lst3 = ['马大帅', "啊飞", "小男孩"]
-a = zip(lst1, lst2, lst3)
-print(dir(a))
-print("__iter__" in dir(a))
-for item in a:
-    print(item)
-
-lst1 = ["胡辣汤", "疙瘩汤", "紫菜蛋花汤"]
-lst2 = ["我喜欢吃", "我更喜欢吃", "我不喜欢吃"]
-# 可以快速构建字典. 记住
-d = dict(zip(lst1, lst2))
-print(d)
 print('=============================================')
 
 '''
@@ -72,7 +47,7 @@ print(res)
 lst = [{"id": 1, "name": '盖伦', "age": 18},
        {"id": 2, "name": '杰斯', "age": 16},
        {"id": 3, "name": '压缩', "age": 17}]
-print(sorted(lst, key=lambda dic: dic['age']))
+print(sorted(lst, key=lambda dic: dic['age'], reverse=True))
 
 print('=============================================')
 
@@ -97,6 +72,33 @@ for i in range(5):
     print(f'{i}: {random.choice(lst)}')
 
 print('=============================================')
+
+'''
+zip()与dir()
+
+The dir() function returns all properties and methods of the specified object, without the values.
+This function will return all the properties and methods, even built-in properties which are default for all object.
+
+The zip() function returns a zip object, which is an iterator of tuples where the first item in each passed iterator is paired together, 
+and then the second item in each passed iterator are paired together etc.
+'''
+lst1 = ["赵本山", "苏有朋", '']
+print(dir(lst1))
+print("__iter__" in dir(lst1))
+lst2 = ["马大帅", "情深深雨蒙蒙", "情深深雨蒙蒙"]
+lst3 = ['马大帅', "啊飞", "小男孩"]
+
+a = zip(lst1, lst2, lst3)
+for item in a:
+    print(item)
+print('=============================')
+lst1 = ["胡辣汤", "疙瘩汤", "紫菜蛋花汤"]
+lst2 = ["我喜欢吃", "我更喜欢吃", "我不喜欢吃"]
+# 可以快速构建字典. 记住
+d = dict(zip(lst1, lst2))
+print(d)
+print('=============================================')
+
 
 '''
 The map() function executes a specified function for each item in an iterable. 

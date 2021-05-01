@@ -1,10 +1,14 @@
 # r:  read 只读模式.
-f = open("a.txt", mode="r", encoding='utf-8')
-# 1.read() 直接全部读取出来. 内存容易炸
-print(f.read())
-# 2.readline()  一次读取一行
-print(f.readline())
-print(f.readline())
+f = open("texts/a.txt", mode="r", encoding='utf-8')
+# 1.readline()  一次读取一行
+print(f.readline(), end='')
+print(f.readline(), end='')
+print('==================')
+# 2.read() 直接全部读取出来. 内存容易炸
+# print(f.read())
+# print('==================')
+# 2.readlines() 把剩余内容全部读取出来.
+print(f.readlines())
 # 3.for循环(重点)
 for line in f:  # 每次循环读取一行内容
     print(line.strip())  # 去掉换行
@@ -17,13 +21,13 @@ for line in f:
 print("=================================================")
 
 # w: write 只写模式, 重新创建文件
-f = open("b.txt", mode="w", encoding="utf-8")
+f = open("texts/b.txt", mode="w", encoding="utf-8")
 f.write("周杰伦")
 f.write("\n")  # 换行
 f.write("哈哈")
 
 # a: append 追加写. 不会重新创建文件, 但是如果文件不存在, 可以创建文件
-f = open("c.txt", mode="a", encoding="utf-8")
+f = open("texts/c.txt", mode="a", encoding="utf-8")
 f.write("你好")
 
 # b: bytes, 二进制  一般处理非文本文件, 不能指定encoding
@@ -35,14 +39,14 @@ for line in f1:
     f2.write(line)
 
 # +: 扩展  r+ w+ a+, r+b w+b a+b
-f = open("a.txt", mode="r+", encoding='utf-8')
+f = open("texts/a.txt", mode="r+", encoding='utf-8')
 print(f.read())
 f.write("后天天气不好")
 f.close()
 
 # 另一种写法, 可以省略掉close
-with open("a.txt", mode="r", encoding="utf-8") as f1, \
-     open("d.txt", mode="w", encoding='utf-8') as f2:
+with open("texts/a.txt", mode="r", encoding="utf-8") as f1, \
+     open("texts/d.txt", mode="w", encoding='utf-8') as f2:
     for line in f1:
         f2.write(line)
 
@@ -58,18 +62,18 @@ with open("a.txt", mode="r", encoding="utf-8") as f1, \
 '''
 import os
 
-with open("f.txt", mode="r", encoding="utf-8") as f1, \
+with open("texts/f.txt", mode="r", encoding="utf-8") as f1, \
      open("f_副本.txt", mode="w", encoding="utf-8") as f2:
     for line in f1:
         if "人" in line:
             line = line.replace("人", "阿拉斯加")
         f2.write(line)
-os.remove("f.txt")  # 删除源文件
-os.rename("f_副本.txt", "f.txt")  # 把副本文件重命名成源文件
+os.remove("texts/f.txt")  # 删除源文件
+os.rename("f_副本.txt", "texts/f.txt")  # 把副本文件重命名成源文件
 
-
+print('=========================================')
 # 读取规则的文件
-f = open("a.txt", mode="r", encoding="utf-8")
+f = open("texts/a.txt", mode="r", encoding="utf-8")
 head_str = f.readline()
 # 把头处理成列表
 head_list = head_str.split()  # 默认的split()用空白切割
