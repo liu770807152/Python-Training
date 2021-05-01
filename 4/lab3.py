@@ -5,7 +5,7 @@ def sqrt_test(n):
     return guess
 
 
-def sqrt(self, x: int) -> int:
+def sqrt(x: int) -> int:
     if x == 0:
         return 0
     C, x0 = float(x), float(x)
