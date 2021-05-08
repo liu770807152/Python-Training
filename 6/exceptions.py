@@ -30,9 +30,9 @@ Python 有两种错误很容易辨认：语法错误和异常。
 # 异常
 # 即便 Python 程序的语法是正确的，在运行它的时候，也有可能发生错误。运行期检测到的错误被称为异常。
 # 大多数的异常都不会被程序处理，都以错误信息的形式展现在这里:
-print(10 * (1/0))
-print(4 + spam * 3)
-print('2' + 2)
+# print(10 * (1/0))
+# print(4 + spam * 3)
+# print('2' + 2)
 
 '''
 异常处理
@@ -50,7 +50,7 @@ except ValueError:
     print("Could not convert data to an integer.")
 except:
     print("Unexpected error:", sys.exc_info()[0])
-
+print('===================================================')
 # try/except 语句还有一个可选的 else 子句，如果使用这个子句，那么必须放在所有的 except 子句之后。
 # else 子句将在 try 子句没有发生任何异常的时候执行。
 # finally子句无论异常是否发生都会执行。
@@ -61,10 +61,9 @@ try:
 # 一个except子句可以同时处理多个异常，这些异常将被放在一个括号里成为一个元组
 except (IOError, NameError) as e:
     print(e)
-else:
-    f.close()
 finally:
     print('这句话，无论异常是否发生都会执行。')
+    f.close()
 
 '''
 抛出异常

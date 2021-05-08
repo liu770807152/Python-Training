@@ -26,12 +26,15 @@ print(printAllSequence(30), end='\n\n')
 改进算法，加入备忘
 '''
 def fib(n: int, mem: dict):
+    # base case
     if n <= 1:
         return n
+    # use memory
     if n in mem.keys():
         return mem[n]
     first = fib(n-1, mem)
     second = fib(n-2, mem)
+    # update memory
     mem[n - 1] = first
     mem[n - 2] = second
     return first + second
