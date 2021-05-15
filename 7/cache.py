@@ -28,9 +28,9 @@ print(printAllSequence(30), end='\n\n')
 from functools import cache, lru_cache
 # @cache
 # 缓存fib()最近五次运行的结果，存放于cache中
-@lru_cache(maxsize=5)
+@lru_cache(maxsize=30)
 def fib(n: int):
     if n <= 1:
         return n
     return fib(n - 1) + fib(n - 2)
-print(printAllSequence(200), end='\n\n')
+print(printAllSequence(1000), end='\n\n')
