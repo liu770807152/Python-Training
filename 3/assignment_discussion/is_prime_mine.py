@@ -1,8 +1,6 @@
 # COMP1730/6730 S1 2021 - Homework 3
 # Submission is due 9:00am, Monday the 29th of March, 2021.
 
-# YOUR ANU ID: u6532687
-# YOUR NAME: Jingru Mou
 
 import math
 
