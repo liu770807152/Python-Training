@@ -18,12 +18,12 @@ def approximate_integral(lower, upper, nterms):
     partition = (upper - lower) / nterms
     sum = 0
     for _ in range(nterms):
-        sum += area_within_abs_one(lower, lower + partition, partition)
+        sum += get_area(lower, lower + partition, partition)
         lower += partition
     return sum
 
 
-def area_within_abs_one(first, second, d):
+def get_area(first, second, d):
     # ((f(x) + f(x + d)) / 2) * d.
     return (first ** 3 + second ** 3) / 2 * d
 

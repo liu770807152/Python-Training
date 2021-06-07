@@ -19,7 +19,7 @@ def interval_intersection(lA, uA, lB, uB):
         return uA - lA
     elif lB >= lA and uB <= uA:
         return uB - lB
-    # 再判断相交关系，因为香蕉关系的条件比较弱
+    # 再判断相交关系，因为相交关系的条件比较弱
     elif lB < lA < uB:
         return uB - lA
     elif lB < uA < uB:
@@ -28,6 +28,7 @@ def interval_intersection(lA, uA, lB, uB):
         return uA - lB
     elif lA < uB < uA:
         return uB - lA
+    # 没有交点的情况
     else:
         return 0
 

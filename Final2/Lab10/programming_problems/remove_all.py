@@ -13,7 +13,7 @@
 #   input provided to it in its arguments.
 
 def remove_all(a_list, element):
-    # 这题目有病
+    # 该题目考察参数的传递
     index = 0
     while index < len(a_list):
         if element == a_list[index]:

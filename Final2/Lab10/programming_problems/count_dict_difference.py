@@ -15,9 +15,8 @@
 def count_dict_difference(A, B):
     result = {}
     for key in A.keys():
-        if key in B.keys():
-            if A[key] - B[key] > 0:
-                result[key] = A[key] - B[key]
+        if key in B.keys() and A[key] - B[key] > 0:
+            result[key] = A[key] - B[key]
         elif key not in B.keys():
             result[key] = A[key]
     return result
