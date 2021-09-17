@@ -1,10 +1,15 @@
+'''
+不太好的求根方法
+'''
 def sqrt_test(n):
     guess = n / 2
     while abs(guess ** 2 - n > 1e-6):
         guess = (guess + n / guess) / 2
     return guess
 
-
+'''
+牛顿-拉弗森方法迭代求根
+'''
 def sqrt(x: int) -> int:
     if x == 0:
         return 0

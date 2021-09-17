@@ -10,7 +10,7 @@ def func(a, b, c):
     a = 20
     print(a)
 
-func()
+# func()
 print(a)
 
 # 总结:

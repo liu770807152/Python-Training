@@ -51,7 +51,7 @@ def func(a, b, c=0):
 func(11, c="吼吼",  b="呵呵")
 
 # 坑: 如果你的默认值参数是一个可变的数据类型, 会被共享 (以后再说)
-def func(val, lst=[]):
+def func(val, lst=[]): #幂等性
     lst.append(val)
     print(lst)
 

@@ -1,3 +1,8 @@
+# 对于所有递归算法，一定有三要素：
+# 1. base case
+# 2. 递归函数的调用
+# 3. 状态的更新
+
 '''
 判断一个字符串是不是回文字符串
 '''
@@ -12,6 +17,7 @@ def is_palindromic(num):
 
 '''
 二分法查找某个元素
+使用二分法的前提是：查找的序列必须有序！！！
 '''
 def bi_search(min, max, data, num):
     '''
@@ -21,14 +27,17 @@ def bi_search(min, max, data, num):
     num表示需要寻找的元素
     '''
     mid = (min + max) // 2
+    # base case: 没有找到
     if mid == 0:
         return False
+    # 2 & 3.
     elif data[mid] < num:
         print('向右侧找！')
         return bi_search(mid, max, data, num)
     elif data[mid] > num:
         print('向左侧找！')
         return bi_search(min, mid, data, num)
+    # base case: 找到了
     else:
         print(f'找到了{data[mid]}')
         return True
@@ -47,7 +56,9 @@ def LIS(nums, i) -> int:
 
     max_len = 1
     for j in range(i + 1, len(nums)):
+        # 判断能否组成increasing subsequence
         if nums[j]> nums[i]:
+            # 如果可以组成，能否组成更长的increasing subsequence
             max_len = max(max_len, LIS(nums, j) + 1)
     return max_len
 
@@ -95,14 +106,14 @@ def knapsack(items, i, biggest_weight, memo):
         next_max = knapsack(items, j, biggest_weight, memo)
         # 当前物品装得下，才考虑怎么装的问题
         if current_weight < biggest_weight:
-            # 该循环主要考虑能正好装满背包的情况
+            # 1. 该循环主要考虑能正好装满背包的情况
             for key, weight in memo.items():
                 if key >= j and current_weight + weight == biggest_weight:
                     memo[i] = biggest_weight
                     break
-            # 如果无法装满，再看看当前位置要怎么装?
-            # 1. 如果当前物品重量 + 往后物品最大重量 < 背包允许重量，则一起装
-            # 2. 如果当前物品重量 + 往后物品最大重量 > 背包允许重量，则只能择其一：要么装当前物品，要么装往后物品的最大
+            # 2. 如果无法装满，再看看当前位置要怎么装?
+            #   a. 如果当前物品重量 + 往后物品最大重量 < 背包允许重量，则一起装
+            #   b. 如果当前物品重量 + 往后物品最大重量 > 背包允许重量，则只能择其一：要么装当前物品，要么装往后物品的最大
             else:
                 if current_weight + next_max < biggest_weight:
                     memo[i] = max(memo[i], current_weight + next_max)
