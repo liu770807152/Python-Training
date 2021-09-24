@@ -36,9 +36,9 @@ def f2(ns):
     return ns
 
 a = '123'
-aList = [1, 2, 3]
+a_list = [1, 2, 3]
 print(f1(a))  # 12311111
-print(f2(aList))  # [1, 2, 3, 1, 1, 1, 1, 1]
+print(f2(a_list))  # [1, 2, 3, 1, 1, 1, 1, 1]
 print('函数执行后：')
 print(a)  # 123
-print(aList)  # [1, 2, 3, 1, 1, 1, 1, 1]
+print(a_list)  # [1, 2, 3, 1, 1, 1, 1, 1]

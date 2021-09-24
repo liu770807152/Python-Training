@@ -3,7 +3,7 @@ import numpy as np
 # 读取该文件夹下的data.csv  comma separated value
 # data = np.genfromtxt("data.csv", dtype=int, delimiter=",", skipheader=1)
 
-# 创建一个长度为10并且除了第五个值为1的空向量
+# 创建一个长度为10并且第五个值为1的空向量
 emptyVector = np.zeros(10)
 emptyVector[4] = 1
 print(emptyVector)
