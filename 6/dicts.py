@@ -1,5 +1,5 @@
 # key可以是任何object，但是要保证不一样！！！！
-# Keys must be immutable
+# Keys must be immutable!!!
 d = {123: "呵呵", True: "哈哈", "name": "me", (1,2,3): 123}
 print(d)
 print('====================================')
@@ -36,7 +36,7 @@ for k, v in d.items():
 print('====================================')
 
 '''add'''
-d['key'] = "随便"
+d['k'] = "随便"
 print(d)
 print('====================================')
 
@@ -53,6 +53,16 @@ print(d)
 d.clear()
 print(d)
 print('====================================')
+
+'''
+list = [num + 1 for num in range(10)] # [1, 2, ..., 10]
+{1: 'a', 2: 'b', 3: 'c', ...}
+
+result= {}
+for num in list:
+    result[num] = funB(funA('a') + num - 1)
+'''
+
 
 '''反转字典'''
 m = {'a': 1, 'b': 2, 'c': 3, 'd': 4}
@@ -107,6 +117,7 @@ print('有' if '武术' in wang['wife']['hobby'] else '没有')
 '''
 a_dict = {1: [0], 2: [1]}
 b_dict = a_dict
+# dict.copy() create a shallow copy of the dictionary
 c_dict = a_dict.copy()
 b_dict[1] = [2]
 c_dict[1] = [0, 0]

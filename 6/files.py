@@ -1,7 +1,7 @@
 # r:  read 只读模式.
 f = open("texts/a.txt", mode="r", encoding='utf-8')
 # 1.readline()  一次读取一行
-print(f.readline(), end='')
+print(f.readline())
 print(f.readline(), end='')
 print('==================')
 # 2.read() 直接全部读取出来. 内存容易炸
@@ -33,8 +33,8 @@ f.write("你好")
 # b: bytes, 二进制  一般处理非文本文件, 不能指定encoding
 # rb 读取字节
 # wb 写入字节
-f1 = open("pumpkin.jpg", mode="rb")
-f2 = open("newPumpkin.jpg", mode="wb")
+f1 = open("image/pumpkin.jpg", mode="rb")
+f2 = open("image/new_pumpkin.jpg", mode="wb")
 for line in f1:
     f2.write(line)
 

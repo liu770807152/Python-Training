@@ -19,7 +19,7 @@ def solution(str):
 print(solution('aab阿斯弗hic486dddd45864ddd9+0e上刀山rg*+^$#@&(&)@#%@@%@^(!|{}<>打赏 /q'))
 
 def getLastNum(array):
-    return -array[-1]
+    return array[-1]
 
 a_list = [[1, 2], [3, 4], [5, -1]]
 a_list = sorted(a_list, key=getLastNum)

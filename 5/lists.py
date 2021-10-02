@@ -31,7 +31,7 @@ for element in l:
     print(element)
 for index, element in enumerate(l):
     print(index, element)
-print(l[len(l) - 1])
+print(l[len(l) - 1]) #l[-1]
 print('===============alter===================')
 '''
 alter
@@ -94,9 +94,9 @@ b_list = [4, 5, 6]
 a_list.append(b_list)
 c_list = a_list[:]
 b_list[0] = 'A'
-print(b_list)
+print(c_list)
 '''
-真题：计算是否为某个input数字的倍数的数字个数
+真题：计算是否为某个input数字的倍数的个数
 '''
 test_list = [0, 5, 97, 34, 47, 2, 46, 78, 100, 15, 84, 8, 16, 48, 132]
 input_num = input()
