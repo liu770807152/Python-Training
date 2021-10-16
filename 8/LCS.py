@@ -1,3 +1,16 @@
+import time
+def timeit(f):
+    def timed(*args, **kw):
+        ts = time.time()
+        result = f(*args, **kw)
+        te = time.time()
+        #print('func:%r args:[%r, %r] took: %.20f sec' % \
+        # (f.__name__, args, kw, te-ts))
+        print('func:%r took: %.20f sec' % \
+              (f.__name__, te - ts))
+        return result
+    return timed
+
 '''
 Longest Common Subsequence
 输入: str1 = "abcde", str2 = "ace"
@@ -5,6 +18,7 @@ Longest Common Subsequence
 解释: 最长公共子序列是 "ace"，它的长度是 3
 '''
 # 递归法，无优化，存在重复计算
+@timeit
 def LCS(str1, str2) -> int:
     def dp(i, j):
         # 空串的 base case
@@ -22,6 +36,7 @@ def LCS(str1, str2) -> int:
     return dp(len(str1) - 1, len(str2) - 1)
 
 # 用DP Table进行优化
+@timeit
 def longestCommonSubsequence(str1, str2) -> int:
     m, n = len(str1), len(str2)
     # 构建 DP table 和 base case
@@ -45,3 +60,9 @@ if __name__ == '__main__':
     print(LCS('babcde', 'ace'))
     print('============================================')
     print(longestCommonSubsequence('ace', 'babcde'))
+
+    print('====================输入越长，效果越明显========================')
+
+    print(LCS('lovngeqstsubsratritng', 'longestsubstring'))
+    print('============================================')
+    print(longestCommonSubsequence('lovngeqstsubsratritng', 'longestsubstring'))

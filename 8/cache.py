@@ -4,8 +4,10 @@ def timeit(f):
         ts = time.time()
         result = f(*args, **kw)
         te = time.time()
-        print('func:%r args:[%r, %r] took: %.20f sec' % \
-          (f.__name__, args, kw, te-ts))
+        #print('func:%r args:[%r, %r] took: %.20f sec' % \
+        # (f.__name__, args, kw, te-ts))
+        print('func:%r took: %.20f sec' % \
+              (f.__name__, te - ts))
         return result
     return timed
 
@@ -20,7 +22,7 @@ def fib(n: int):
 def printAllSequence(n):
     for i in range(n):
         print(i, fib(i))
-print(printAllSequence(30), end='\n\n')
+printAllSequence(30)
 
 '''
 不用动态规划，能不能改进算法效率？我们可以利用cache！
@@ -33,4 +35,4 @@ def fib(n: int):
     if n <= 1:
         return n
     return fib(n - 1) + fib(n - 2)
-print(printAllSequence(1000), end='\n\n')
+printAllSequence(1000)

@@ -31,13 +31,13 @@ print('=========================================')
 
 # 递归
 '''
-以下程序打印前30个斐波那契数列
+以下程序打印前40个斐波那契数列
 '''
 def fib(n):
     if n <= 1:
         return n
     return fib(n - 1) + fib(n - 2)
 
-for i in range(30):
+for i in range(40):
     print(i, fib(i))
 print('Done!')
