@@ -7,7 +7,7 @@ str = "hello there"
 print(str)
 str = '''hello there'''
 print(str)
-str = 'He said: \"It\'s time.\"\n'
+str = 'He said: "It\'s time."\n'
 print(str)
 print('========================================================================')
 '''
@@ -15,6 +15,7 @@ ASCII
 '''
 print(ord('A'))
 print(chr(65 + 4))
+# ASCII UTF-8
 print(chr(20986) + chr(21475))
 print('========================================================================')
 '''
@@ -37,29 +38,71 @@ print(str[:]) # :前后都不写. 从头到尾。以后细讲
 print(str[ : : 2])
 print('========================================================================')
 '''
+运算符重载 operator overloading
+'''
+str = 'COMP'
+str += '1730' # str = 'COMP' + '1730'
+print(str)
+long_str = str * 3
+print(long_str)
+# Two sequences are equal if they have the same
+# length and equal elements in every position
+print(long_str == str)
+# seq1 < seq2 if
+#   seq1 is a prefix of seq2
+#   or: for some index i and the elements in each position before i are equal
+print(long_str > str)
+print('========================================================================')
+'''
 English-related operation
 '''
-print(str.capitalize())
+str = 'comp1730'
 print(str.lower())
 print(str.upper())
-str = ' I am a string\n'
+str = ' I am a string string\n'
 # strip() 默认是去掉字符串左右两端的空白(空格, \t, \n)
 print(str.strip())
 print('========================================================================')
 '''
-conditional judgement
+常用方法
 '''
-money = '123456'
-print(money.isdigit())
-money = 'l23456'
-print(money.isdigit())
+print(str.endswith('\n'))
+print(str.startswith(' '))
+print(str.index('a'))
+print(str.split(' '))
+print(str.find('str'))
 print('========================================================================')
-# 关于字符串的replace()
-str = '12341'
-str.replace('1', '0')
-# nothing happen?
-print(str)
-str = str.replace('1', '0')
-print(str)
-print('==========================变量名是str, 那str函数还能用吗？==============================')
-# str = str(123)
+'''
+Print format
+'''
+name = "sylar"
+age = 18
+s = "我叫%s, 我今年%d岁了" % (name, age)  # 了解
+print(s)
+
+s2 = f"我叫{name}, 我今年{age}岁了"  # 主推
+print(s2)
+print('========================================================================')
+'''
+looping
+'''
+s = "我叫周杰伦"
+# while loop
+i = 0
+while i < len(s):
+    s1 = s[i]
+    print(s1, end='')
+    i += 1
+# for loop
+s = "我叫周杰, 我也想加一个伦"
+for c in s:  # 迭代循环
+    print(c, end='')
+
+if __name__ == '__main__':
+    print('=================================练几道题=======================================')
+    print('=================================1=======================================')
+    s = 'Python rule'
+    print(s[:4])
+    print(s[3:-3])
+    print(s[2:-2:2])
+    print(s.split().sort())

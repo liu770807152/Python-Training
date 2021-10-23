@@ -53,21 +53,21 @@ else:
 print('=============================================================================================')
 
 '''
-我们经常会如下这种嵌套的 for 循环代码
-list1 = range(1,3)
-list2 = range(4,6)
-list3 = range(7,9)
-for item1 in list1:
-    for item2 in list2:
-       for item3 in list3:
-           print(item1+item2+item3)
-           
-这样的代码，可读性非常的差，很多人不想这么写，可又没有更好的写法。
-这里介绍一种我常用的写法，使用 itertools 这个库来实现更优雅易读的代码。
+例题: 计算是否为某个input数字的倍数的数字个数
 '''
-from itertools import product
-list1 = range(1,3)
-list2 = range(4,6)
-list3 = range(7,9)
-for item1,item2,item3 in product(list1, list2, list3):
-    print(item1+item2+item3)
+num = input()
+source_list = [0, 5, 8, 6, 7, 31, 2, 45, 125, 97, 54, 77, 68, 98]
+len([cur for cur in source_list if cur % num == 0])
+
+'''
+例题：下面一段程序的输出结果是什么? x和y最终的值是什么?
+'''
+x, y = 0, 0
+def func(x, y):
+    for x in range(11):
+        y = 2 * x + 1
+        print(y)
+        if y > 7:
+            break
+    return y
+# print(func(x, y), x, y)

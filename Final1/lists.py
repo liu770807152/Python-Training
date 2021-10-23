@@ -16,6 +16,29 @@ print(l)
 print(l.pop())
 print(l.pop(0))
 print(l)
+'''
+例题：找出下面一段代码的错误
+'''
+print('=================删除的例题=================')
+lst = ['usabd', 'fqwf', 'sdqusbb', 'srqusbsq', 'fwqupusq', '[usb']
+def remove_usb_1(lst: list):
+    l = lst[:]
+    for s in l:
+        if 'usb' in s:
+            l.remove(s)
+    return l
+print(remove_usb_1(lst))
+
+def remove_usb_2(lst: list):
+    l = lst[:]
+    index = 0
+    while index < len(l):
+        if 'usb' in l[index]:
+            l.pop(index)
+        index += 1
+    return l
+print(remove_usb_2(lst))
+
 print('=================search=================')
 '''
 search
@@ -56,13 +79,6 @@ a = [1, 3, 5, 7, 9]
 b = [2, 3, 4, 5, 6]
 c = [5, 6, 7, 8, 9]
 print(list(set().union(a, b, c))) # [1, 2, 3, 4, 5, 6, 7, 8, 9]
-print('================counter==================')
-'''
-出现次数最多的 2 个字母
-'''
-from collections import Counter
-c = Counter('hello world')
-print(c.most_common(2)) #[('l', 3), ('o', 2)]
 print('================hard part==================')
 '''
 难点的代码

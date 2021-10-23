@@ -54,8 +54,19 @@ d.clear()
 print(d)
 print('====================================')
 
+'''
+难点的代码
+'''
+a_dict = {1: [0], 2: [1]}
+b_dict = a_dict
+c_dict = a_dict.copy()
+b_dict[1] = [2]
+c_dict[1] = [0, 0]
+a_dict[2].append(1)
 
-'''反转字典'''
+'''
+例题：反转字典
+'''
 m = {'a': 1, 'b': 2, 'c': 3, 'd': 4}
 newMap = {v: k for k, v in m.items()} # {1: 'a', 2: 'b', 3: 'c', 4: 'd'}
 print(newMap)
@@ -66,7 +77,6 @@ print('====================================')
     分类, 把大于55的放一起, 把小于55的放一起
     结果: {"bigger":[66,77,88,99], "smaller":[11,22,33,44,55]}
 '''
-
 # l = [11, 22, 33, 44, 55, 66, 77, 88, 99]
 # result = {}
 # for item in l:
@@ -78,37 +88,14 @@ print('====================================')
 #         result.setdefault("smaller", []).append(item)
 # print(result)
 
-'''dict的嵌套'''
-wang = {
-    "name": "汪峰",
-    "wife": {
-        "name": "章子怡",
-        "age": 18,
-        'hobby': ['台球', "武术", "演戏"]
-    },
-    "hobby": ["唱歌", '跳舞', "当导师"],
-    "children": [
-        {"name": "老大", "age": 10},
-        {"name": "老二", "age": 8},
-    ]
-}
-
-# 练习：
-# 1. 给汪峰的二儿子加一岁
-wang['children'][1]['age'] += 1
-print(wang)
-# 2. 给汪峰添加一个爱好: 卡拉ok
-wang['hobby'].append('卡拉ok')
-print(wang)
-# 3. 检查汪峰老婆有没有“武术”的爱好
-print('有' if '武术' in wang['wife']['hobby'] else '没有')
-
 '''
-难点的代码
+例题：给同学们两个字典，按要求进行合并。
+对于它们每一个item，key都相等，查看value：如果有交集，则保留交集；如果没有交集，则分别求出它们的最大值和最小值，求出它们的并集
+input:
+dict1 = {1: [1, 5, 9], 2: [1, 8, 7]}
+dict2 = {1: [3, 5, 7], 2: [3, 8, 9]}
+output:
+result = {1: {5}, 2: {1, 3, 8, 9}}
 '''
-a_dict = {1: [0], 2: [1]}
-b_dict = a_dict
-c_dict = a_dict.copy()
-b_dict[1] = [2]
-c_dict[1] = [0, 0]
-a_dict[2].append(1)
+def func(dict1: dict, dict2: dict) -> dict:
+    pass
