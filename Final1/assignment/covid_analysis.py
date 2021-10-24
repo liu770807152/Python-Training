@@ -204,9 +204,7 @@ def analyse(path_to_files):
         Question 4
     '''
     print('\nQuestion 4:')
-    
-    
-    
+
     
 
 # The section below will be executed when you run this file.

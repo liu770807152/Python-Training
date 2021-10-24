@@ -97,5 +97,15 @@ dict2 = {1: [3, 5, 7], 2: [3, 8, 9]}
 output:
 result = {1: {5}, 2: {1, 3, 8, 9}}
 '''
-def func(dict1: dict, dict2: dict) -> dict:
+def func(dict1, dict2):
     pass
+    #result = dict()
+    #for k, v in dict1.items():
+    #    value2 = set(dict2[k])
+    #    v = set(v)
+    #    if len(v & value2) > 0:
+    #        result[k] = v & value2
+    #    else:
+    #        lst = []
+    #        lst.extend(max(v), min(v), max(value2), min(value2))
+    #        pass

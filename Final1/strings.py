@@ -34,7 +34,7 @@ print(str[1 : 6])
 print(str[-5 : -1])
 print(str[1 : ]) # :后面什么都不写. 表示切到末尾
 print(str[ : 6]) # :前面什么都不写. 表示从头开始切
-print(str[:]) # :前后都不写. 从头到尾。以后细讲
+print(str[:]) # :前后都不写. 从头到尾。
 print(str[ : : 2])
 print('========================================================================')
 '''
@@ -70,7 +70,7 @@ print(str.endswith('\n'))
 print(str.startswith(' '))
 print(str.index('a'))
 print(str.split(' '))
-print(str.find('str'))
+print(str.find('z'))
 print('========================================================================')
 '''
 Print format
@@ -105,4 +105,7 @@ if __name__ == '__main__':
     print(s[:4])
     print(s[3:-3])
     print(s[2:-2:2])
-    print(s.split().sort())
+    tmp = s.split()
+    print(tmp)
+    tmp.sort()
+    print(tmp)

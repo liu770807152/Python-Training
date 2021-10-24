@@ -1,14 +1,4 @@
 '''
-while循环语法
-'''
-i = 0
-while i < 10:
-    print(i)
-    i += 1
-else:  # else中的代码只有当循环不被break中断才执行
-    print("OK!")
-
-'''
 for循环语法
 '''
 for i in range(10):
@@ -57,7 +47,7 @@ print('=========================================================================
 '''
 num = input()
 source_list = [0, 5, 8, 6, 7, 31, 2, 45, 125, 97, 54, 77, 68, 98]
-len([cur for cur in source_list if cur % num == 0])
+#len([cur for cur in source_list if cur % num == 0])
 
 '''
 例题：下面一段程序的输出结果是什么? x和y最终的值是什么?
@@ -69,5 +59,5 @@ def func(x, y):
         print(y)
         if y > 7:
             break
-    return y
-# print(func(x, y), x, y)
+    return x, y
+print(func(x, y), x, y)

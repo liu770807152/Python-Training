@@ -6,11 +6,11 @@ alpha = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r'
 def solution(str):
     result, counter = {}, 0
     for item in str:
-        if item in alpha:
+        if item.isalpha():
             counter += 1
             # setdefault在执行完新增流程之后. 会根据key查询value
-            value = result.setdefault(item, 0) + 1
-            result[item] = value
+            tmp = result.setdefault(item, 0) + 1
+            result[item] = tmp
 
     times = sorted(list(result.values()), reverse=True)
     print(times)
