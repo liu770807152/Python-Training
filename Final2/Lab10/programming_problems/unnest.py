@@ -13,25 +13,25 @@
 #   input provided to it in its arguments.
 
 '''
+base case: 递归到最后一层list
 1. 循环遍历每个元素
-2. 如果当前元素的类型是list，进入当前元素，执行步骤1
-3. 如果当前元素的类型是数字，把它存入临时存储的list当中
+2. 如果当前元素的类型是数字，把它存入临时的list当中
+3. 如果当前元素的类型是list，进入当前元素，执行步骤1
 4. 把返回回来的list追加到当前的list之中
 5. 遍历完了所有元素，我们就把临时存储的list返回出去
 '''
 def unnest(alist):
-    # base case
     result = []
     # 1.
     for cur in alist:
-        # 3.
+        # 2.
         if type(cur) != list:
             result.append(cur)
         else:
-            # 2.
-            inner_result = unnest(cur)
+            # 3.
+            nested_result = unnest(cur)
             # 4.
-            result.extend(inner_result)
+            result.extend(nested_result)
     # 5.
     return result
 

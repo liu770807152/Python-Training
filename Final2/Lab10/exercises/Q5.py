@@ -9,4 +9,4 @@ def smallest_non_negative(number_list):
 assert smallest_non_negative([]) == 0
 assert smallest_non_negative([-1.0, -2.2, -3.3]) == 0
 assert smallest_non_negative([1, 2, 3]) == 1
-assert smallest_non_negative([-1.1, 0, 1]) == 0
+assert smallest_non_negative([-1.1, 0.1, 1]) == 0.1

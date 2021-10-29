@@ -1,4 +1,3 @@
-
 # Implement the function remove_all below.
 # You can define other functions if it helps you decompose and solve
 # the problem.
@@ -13,7 +12,7 @@
 #   input provided to it in its arguments.
 
 def remove_all(a_list, element):
-    # 该题目考察参数的传递
+    # 该题目list的删除
     index = 0
     while index < len(a_list):
         if element == a_list[index]:

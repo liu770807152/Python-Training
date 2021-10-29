@@ -1,4 +1,3 @@
-
 # Implement the function approximate_integral below.
 # (The statement "pass" is just a placeholder that does nothing: you
 # should replace it.)
@@ -14,6 +13,16 @@
 # - you MAY NOT use global variables; the function must use only the
 #   input provided to it in its arguments.
 
+
+'''
+Let f(x) be the function that we want to integrate. The area of the trapezoid over the interval [x,x+d] is ((f(x) + f(x + d)) / 2) * d.
+Write a function approximate_intergral(lower, upper, nterms)
+that calculates an approximation of the integral of the function f(x) = x3 (that is, x cubed) over a bounded interval using the trapezoid method.
+
+For example, approximate_integral(0, 2, 2) should return 5.
+The first trapezoid is over the interval [0,1] and has an area of 0.5 (((0 + 1) / 2) * 1);
+the second is over the interval [1,2] and has an area of 4.5 (((1 + 8) / 2) * 1).
+'''
 def approximate_integral(lower, upper, nterms):
     partition = (upper - lower) / nterms
     sum = 0

@@ -1,4 +1,14 @@
+'''
+We call a dictionary invertible if every key in it maps to a unique value, or in other words,
+for every value appearing in the dictionary, there is only one key that maps to that value
+'''
 def is_invertible(adict):
+    return sorted(adict.keys()) == sorted(adict.values())
+
+print(is_invertible({'a' : 'b', 'b' : 'e', 'c' : 'f'}))
+
+
+def is_invertible2(adict):
     d = {}
     for value in adict.values():
         if value in d:
@@ -7,8 +17,8 @@ def is_invertible(adict):
             d[value] = 1
     return True
 
-print(is_invertible({ 'a' : 'b', 'b' : 'e', 'c' : 'f' }))
-
+print(is_invertible2({'a' : 'b', 'b' : 'e', 'c' : 'f'}))
+print(is_invertible2({'a' : 'b', 'b' : 'e', 'c' : 'b'}))
 
 
 def invertible(adict):

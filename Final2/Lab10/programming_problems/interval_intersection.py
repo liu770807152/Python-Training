@@ -1,4 +1,3 @@
-
 # Implement the function interval_intersection below.
 # You can define other functions if it helps you decompose and solve
 # the problem.
@@ -12,7 +11,14 @@
 # - you MAY NOT use global variables; the function must use only the
 #   input provided to it in its arguments.
 
+'''
+Write a function interval_intersection(lA, uA, lB, uB) that returns the length of the intersection of two intervals A and B.
+Arguments lA and uA are the lower and upper end points of interval A, and lB and uB are the lower and upper end points of interval B.
+If the intervals do not intersect, the function should return 0.
 
+For example, interval_intersection(0, 3, 1, 5) should return 2,
+because the intersection of the two intervals [0,3] and [1,5] is [1,3], which has a length of 3 - 1 = 2.
+'''
 def interval_intersection(lA, uA, lB, uB):
     # 先判断包含关系
     if lA >= lB and uA <= uB:

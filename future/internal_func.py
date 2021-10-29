@@ -79,7 +79,7 @@ zip()与dir()
 The dir() function returns all properties and methods of the specified object, without the values.
 This function will return all the properties and methods, even built-in properties which are default for all object.
 
-The zip() function returns a zip object, which is an iterator of tuples where the first item in each passed iterator is paired together, 
+The zip() function returns a zip object, which is an iterator of tuples where the exercises item in each passed iterator is paired together, 
 and then the second item in each passed iterator are paired together etc.
 '''
 lst1 = ["赵本山", "苏有朋", '']

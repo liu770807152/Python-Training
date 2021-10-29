@@ -1,4 +1,3 @@
-
 # Implement the function super_increasing below.
 # You can define other functions if it helps you decompose and solve
 # the problem.
@@ -12,7 +11,14 @@
 # - you MAY NOT use global variables; the function must use only the
 #   input provided to it in its arguments.
 
+'''
+A sequence of numbers is called super-increasing
+if and only if every number in the sequence is strictly greater than the sum of all numbers preceding it in the sequence.
+The first element in the sequence can be any number.
 
+For example, the sequences 1,3,5,11,21 and -2,1,2 are both super-increasing;
+the sequence 1,3,5,7,19 is increasing, but not super-increasing.
+'''
 def super_increasing(seq):
     index = 0
     sum = 0

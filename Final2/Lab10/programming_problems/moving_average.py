@@ -14,21 +14,27 @@
 
 import numpy as np
 
+
+'''
+If S = (2, 0, -2, 2) and w = 2, the moving average is [1, -1, 0]. 1 is the average of (2, 0), -1 is the average of (0, -2), and 0 is the average of (-2, 2).
+'''
 def moving_average(seq, wsize):
-    result = []
-    index = 0
+    index, result = 0, []
     # 注意是小于等于，不然会少一次
     while index + wsize <= len(seq):
-        result.append(get_average(seq[index: index + wsize]))
+        # result.append(get_average(seq[index: index + wsize]))
+        result.append(np.average(seq[index: index + wsize]))
         index += 1
     return result
 
 
+'''
 def get_average(a_list):
     sum = 0
     for cur in a_list:
         sum += cur
     return sum / len(a_list)
+'''
 
 
 def seq_matches(seq1, seq2):

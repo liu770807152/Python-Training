@@ -2,7 +2,7 @@ sequence = [3.0, 1.5, 0.0, -1.5, -3.0, 3.0]
 
 print('===========indexing===============')
 print('The length of sequence is: ', len(sequence))
-print('The "first" element is: ', sequence[1])
+print('The "exercises" element is: ', sequence[1])
 print('The "last" element is: ', sequence[-1])
 '''
 slicing

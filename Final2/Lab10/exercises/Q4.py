@@ -1,3 +1,7 @@
+'''
+Give an example, if possible, of an argument sequence that causes funY to get stuck in an infinite loop,
+as well as an argument sequence for which the function executes without error and returns a value.
+'''
 def funY(x):
     i = 0
     while i < len(x):
@@ -8,13 +12,16 @@ def funY(x):
         i = i + x[i] % len(x)
     return i
 
-# 1.
+print(funY([1, 2, 3]))
+
+# 1. get stuck in an infinite loop,
 #print(funY([0, 2, 3]))
-# 2.
 #print(funY([1, 2, 3, 4]))
-# 3.
+# 2. executes without error and returns a value
+#print(funY([1, 2, 3]))
+# 3. executes with error
 #print(funY(['a', 'b', 'c']))
 #print(funY([1.1, 2.2, 3.3]))
 #print(funY([[1.1]]))
 #print(funY([(1.1, )]))
-print(funY([{1.1: 1.1}]))
+#print(funY([{1.1: 1.1}]))

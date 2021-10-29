@@ -1,4 +1,3 @@
-
 # Implement the function count_dict_difference below.
 # You can define other functions if it helps you decompose and solve
 # the problem.
