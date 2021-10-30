@@ -3,7 +3,7 @@ Each of the following pieces of python code attempt to compute and print the max
 '''
 x = [6, 4, 8, 1]
 y = [6, 4, 8, 1]
-
+'''
 def find_max(x, y):
    d = 0
    for i in x and j in y:
@@ -11,7 +11,7 @@ def find_max(x, y):
    return d
 
 print("the max difference is ", find_max(x, x))
-
+'''
 
 
 def find_max1(x, y):
@@ -19,13 +19,15 @@ def find_max1(x, y):
     for i in x:
         for j in y:
             print(i, j)
-            c.append(x[i] - y[j])
+            c.append(i - j)
     return max(c)
 
 print("The max difference is ", find_max1(x, x))
 
 
-
+'''
+[1,2,3] -> [1,2,3] y=1/[-1,-2,-3] y=-1
+'''
 def find_max(y):
     z = x[0] * y
     for i in range(len(x)):

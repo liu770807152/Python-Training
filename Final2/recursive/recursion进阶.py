@@ -29,6 +29,7 @@ def bi_search(min, max, data, target):
     max表示有序列表尾部索引
     data表示有序列表
     target表示要搜索的元素
+    [1, 2, 3, 4, 5] 3 -> [1, 2] 1 -> [2]
     '''
     mid = (min + max) // 2
     # base case
@@ -112,6 +113,7 @@ def subset_sum_follow_up(w, remain):
         temp1 = subset_sum_follow_up(w[1:], remain - w[0])
     # excluding w[0]
     temp2 = subset_sum_follow_up(w[1:], remain)
+    print(w, temp1, temp2)
     if temp1 >= 0 and temp2 >= 0:
         return min(temp1, temp2)
     else:
@@ -233,9 +235,13 @@ if __name__ == '__main__':
     print(f"number is 123320, check if it\'s palindromic: {is_palindromic('123320')}")
     print('================================================')
     data = [1, 3, 6, 13, 56, 123, 345, 1024, 3223, 6688]
-    print(f'data is {data}, search for 3: {bi_search(0, len(data), data, 10)}')
+    print(f'data is {data}, search for 10: {bi_search(0, len(data), data, 6)}')
     print('================================================')
     print(f'suquence is {[1, 5, 2, 4, 3]}, LIS is: {length_of_LIS([1, 5, 2, 4, 3])}')
+    print('================================================')
+    print(f'关于0-1背包问题，物品列表是: {[1, 3]}')
+    print('暴力解法的结果：')
+    print(4 - subset_sum_follow_up([1, 3], 4))
     print('================================================')
     print(f'关于0-1背包问题，物品列表是: {[1, 3, 4, 8, 10, 3]}')
     print('暴力解法的结果：')

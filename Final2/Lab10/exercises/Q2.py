@@ -23,6 +23,7 @@ print(is_invertible2({'a' : 'b', 'b' : 'e', 'c' : 'b'}))
 
 def invertible(adict):
     inv_dict = make_inv_dict(adict)
+    print(inv_dict, adict)
     return adict == inv_dict
 
 
