@@ -32,22 +32,22 @@ def bi_search(min, max, data, target):
     [1, 2, 3, 4, 5] 3 -> [1, 2] 1 -> [2]
     '''
     mid = (min + max) // 2
-    # base case
-    if min >= max:
-        if target == data[mid]:
-            print(f'找到了{data[mid]}, 在下标{mid}！')
-            return True
-        else:
-            print(f'没找到！')
-            return False
+    # base case 1: 要找的数刚好是当前区间中间的数
+    if data[mid] == target:
+        print(f'找到了{data[mid]}, 在下标{mid}！')
+        return True
+    # base case 2: 区间没有数
+    if min > max:
+        print(f'没找到！')
+        return False
     # 2 & 3.
     elif data[mid] < target:
         print('向右侧找！')
-        #print(f'min={min}, mid={mid}, max={max}')
+        print(f'min={min}, mid={mid}, max={max}')
         return bi_search(mid+1, max, data, target)
     elif data[mid] > target:
         print('向左侧找！')
-        # print(f'min={min}, mid={mid}, max={max}')
+        print(f'min={min}, mid={mid}, max={max}')
         return bi_search(min, mid-1, data, target)
 
 
@@ -113,7 +113,7 @@ def subset_sum_follow_up(w, remain):
         temp1 = subset_sum_follow_up(w[1:], remain - w[0])
     # excluding w[0]
     temp2 = subset_sum_follow_up(w[1:], remain)
-    print(w, temp1, temp2)
+    # print(w, temp1, temp2)
     if temp1 >= 0 and temp2 >= 0:
         return min(temp1, temp2)
     else:
@@ -235,7 +235,8 @@ if __name__ == '__main__':
     print(f"number is 123320, check if it\'s palindromic: {is_palindromic('123320')}")
     print('================================================')
     data = [1, 3, 6, 13, 56, 123, 345, 1024, 3223, 6688]
-    print(f'data is {data}, search for 10: {bi_search(0, len(data), data, 6)}')
+    print(f'data is {data}, search for 6: {bi_search(0, len(data), data, 6)}', end='\n================================================\n')
+    print(f'data is {data}, search for 7: {bi_search(0, len(data), data, 7)}')
     print('================================================')
     print(f'suquence is {[1, 5, 2, 4, 3]}, LIS is: {length_of_LIS([1, 5, 2, 4, 3])}')
     print('================================================')
